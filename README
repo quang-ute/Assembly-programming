@@ -1,5 +1,5 @@
-This is how to setup Alpine linux environment for assmbly development. 
-Due to small footprint of alpine linux, this setup is suitable for machine with low memory capacity.
+This is how to setup Alpine linux environment for assembly x86 development. 
+Due to small footprint of alpine linux, this setup is suitable for machines with low configuration.
 Prerequisites: WSL 2 installed `https://docs.microsoft.com/en-us/windows/wsl/install`
 Steps:
 1. Goto https://alpinelinux.org/downloads, scroll down to miniroot file system, click x86.
@@ -12,9 +12,7 @@ Steps:
    wsl --import alpine-x86 . ..\alpine-minirootfs-3.14.2-x86.tar.gz
    wsl -d alpine-x86
 
-You are now in 
-<%computername%>:/mnt/c/Users/Quang/wsl/alpine-x86#
-
+   You are now in <%computername%>:/mnt/c/Users/Quang/wsl/alpine-x86#
 7. Create sub-folder: 
    mkdir /home/asm
 8. Create user asm

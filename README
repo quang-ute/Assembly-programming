@@ -1,36 +1,4 @@
-This is how to setup Alpine linux environment for assembly x86 development. 
-Due to small footprint of alpine linux, this setup is suitable for machines with low configuration.
-Prerequisites: WSL 2 installed `https://docs.microsoft.com/en-us/windows/wsl/install`
-Steps:
-1. Goto https://alpinelinux.org/downloads, scroll down to miniroot file system, click x86.
-2. Create folder wsl in C:\users\<%username%>  (e.g. c:\Users\Quang\wsl)
-3. Change working directory to wsl
-   cd c:\Users\Quang\wsl
-4. Create folder alpine-x86 in wsl (e.g. c:\Users\Quang\wsl\alpine-x86)
-5. Copy downloaded alpine image alpine-minirootfs-3.14.2-x86.tar.gz to alpine-x86 
-6. register alpine-x86 distribution:
-   wsl --import alpine-x86 . ..\alpine-minirootfs-3.14.2-x86.tar.gz
-   wsl -d alpine-x86
 
-   You are now in <%computername%>:/mnt/c/Users/Quang/wsl/alpine-x86#
-7. Create sub-folder: 
-   mkdir /home/asm
-8. Create user asm
-   adduser asm
-9. Make it working folder:
-   cd /home/asm
-10. install required packages
-    apk add update
-    apk --no-cache add nano nasm gdb git gcc musl-dev libc-dev binutils 
-    exit
-11. Re-launch alpine-x86 with asm user
-    wsl -d alpine-x86 -u asm --cd ~
-    You are now in /home/asm  
-    <ComputerName>:~$ <-- new prompt
-    Check working directory to make sure that you are now in home directory
-    <ComputerName>:~$pwd
-    /home/asm <-- home directory 
-
-12. install  PEDA-Python Exploit Development Assistance for GDB:
-    git clone https://github.com/longld/peda.git ~/peda
-    echo "source ~/peda/peda.py" >> ~/.gdbinit
+install  PEDA-Python Exploit Development Assistance for GDB:
+git clone https://github.com/longld/peda.git ~/peda
+echo "source ~/peda/peda.py" >> ~/.gdbinit
